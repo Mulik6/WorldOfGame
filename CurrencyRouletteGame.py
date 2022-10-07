@@ -1,3 +1,7 @@
+# This game will use the free currency api to get the current exchange rate from USD to ILS, will
+# generate a new random number between 1-100 a will ask the user what he thinks is the value of
+# the generated number from USD to ILS, depending on the user’s difficulty his answer will be
+# correct if the guessed value is between the interval surrounding the correct answer
 import requests
 import random
 

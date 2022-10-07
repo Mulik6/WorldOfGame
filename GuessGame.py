@@ -1,3 +1,5 @@
+# The purpose of guess game is to start a new game, cast a random number between 1 to
+# variable called difficulty. The game will get a number input from the user
 import random
 
 
