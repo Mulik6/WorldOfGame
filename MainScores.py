@@ -1,3 +1,5 @@
+# This file’s sole purpose is to serve the user’s score currently in the scores.txt file over HTTP with
+# HTML. This will be done by using python’s flask library.
 from flask import Flask
 import Utils
 
