@@ -31,5 +31,3 @@ def score_server():
                     </html>"""
 
     app.run("0.0.0.0", 5000)
-
-score_server()
