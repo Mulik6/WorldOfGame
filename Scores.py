@@ -17,14 +17,14 @@ def add_score(difficulty: int):
     # current_score = 0
     if not file_exists:
         open(Utils.SCORES_FILE_NAME, "a")
-    else:
-        with open(Utils.SCORES_FILE_NAME, "r") as scores_file:
-            current_score = scores_file.read()
-            print(f"current score: {current_score}")
-        if current_score == '':
-            current_score = 0
-        new_score = int(current_score) + difficulty
-        with open(Utils.SCORES_FILE_NAME, "w") as scores_file:
-            scores_file.write(f"{new_score}")
+    with open(Utils.SCORES_FILE_NAME, "r") as scores_file:
+        current_score = scores_file.read()
+        print(f"current score: {current_score}")
+    if current_score == '':
+        current_score = 0
+    new_score = int(current_score) + (difficulty * 3) + 5
+    print(f"new_score:{new_score}")
+    with open(Utils.SCORES_FILE_NAME, "w") as scores_file:
+        scores_file.write(f"{new_score}")
 
 
