@@ -6,13 +6,25 @@
 # point saved in a file.
 
 import Utils
+from os.path import exists
 
 
 # The function’s input is a variable called difficulty. The function will try to read
 # the current score in the scores file, if it fails it will create a new one and will use it to save
 # the current score.
 def add_score(difficulty: int):
-    with open(Utils.SCORES_FILE_NAME, "a") as scores_file:
-        scores_file.write(f"{difficulty}\n")
+    file_exists = exists(Utils.SCORES_FILE_NAME)
+    # current_score = 0
+    if not file_exists:
+        open(Utils.SCORES_FILE_NAME, "a")
+    else:
+        with open(Utils.SCORES_FILE_NAME, "r") as scores_file:
+            current_score = scores_file.read()
+            print(f"current score: {current_score}")
+        if current_score == '':
+            current_score = 0
+        new_score = int(current_score) + difficulty
+        with open(Utils.SCORES_FILE_NAME, "w") as scores_file:
+            scores_file.write(f"{new_score}")
 
 
