@@ -4,6 +4,7 @@
 from time import sleep
 import random
 import functools
+import Utils
 import os
 
 class MemoryGame:
@@ -35,8 +36,9 @@ class MemoryGame:
     def play(self):
         computer_sequence = self.generate_sequence()
         print(f"Try to momorize and repeat the following sequence: \n {computer_sequence}")
-        sleep(0.7)
-        for i in range(1,100):
-            print(f"\n")
+        # sleep(0.7)
+        # for i in range(1,100):
+        #     print(f"\n")
+        Utils.screen_cleaner()
         player_sequence = self.get_list_from_user()
         return self.is_list_equal(computer_sequence, player_sequence)
