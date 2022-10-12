@@ -1,11 +1,10 @@
 # The purpose of memory game is to display an amount of random numbers to the users for 0.7
 # seconds and then prompt them from the user for the numbers that he remember. If he was right
 # with all the numbers the user will win otherwise he will lose.
-from time import sleep
 import random
 import functools
-import Utils
-import os
+from Utilities import Utils
+
 
 class MemoryGame:
     def __init__(self, difficulty: int):

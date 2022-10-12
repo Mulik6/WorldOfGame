@@ -1,7 +1,7 @@
 # This file’s sole purpose is to serve the user’s score currently in the scores.txt file over HTTP with
 # HTML. This will be done by using python’s flask library.
 from flask import Flask
-import Utils
+from Utilities import Utils
 
 
 def score_server():
@@ -10,7 +10,7 @@ def score_server():
     @app.route("/")
     def return_scores():
         try:
-            with open(Utils.SCORES_FILE_NAME,"r") as score_file:
+            with open(Utils.SCORES_FILE_NAME, "r") as score_file:
                 SCORE = score_file.readlines()[-1:]
                 print(SCORE)
             return f"""<html>

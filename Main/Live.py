@@ -1,7 +1,5 @@
-import CurrencyRouletteGame
-import GuessGame
-import MemoryGame
-import Scores
+from Games import GuessGame, CurrencyRouletteGame, MemoryGame
+from Utilities import Scores
 
 
 def welcome(name="Muli"):
