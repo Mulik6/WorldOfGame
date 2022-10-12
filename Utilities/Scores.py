@@ -5,7 +5,7 @@
 # Each time the user is winning a game, the points he own will be added to his current amount of
 # point saved in a file.
 
-import Utils
+from Utilities import Utils
 from os.path import exists
 
 
