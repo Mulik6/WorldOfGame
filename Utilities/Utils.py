@@ -2,7 +2,7 @@
 # for our game.
 from os import system
 from time import sleep
-SCORES_FILE_NAME = '../Scores.txt'  # A string representing a file name. By default “Scores.txt”
+SCORES_FILE_NAME = 'Scores.txt'  # A string representing a file name. By default “Scores.txt”
 BAD_RETURN_CODE = '418'  # A number representing a bad return code for a function.
 
 

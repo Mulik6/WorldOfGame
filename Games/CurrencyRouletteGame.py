@@ -25,7 +25,7 @@ class CurrencyRouletteGame:
     def get_guess_from_user(self):
         player_guess = 'a'
         while not player_guess.strip().isdigit():
-            player_guess = input(f"Try and guess the amount of {self.random_amount} in ILS: \n")
+            player_guess = input(f"Try and guess the amount of {self.random_amount}$ in ILS: \n")
             if not player_guess.strip().isdigit():
                 print("Input can be Number (int) only! \n\n")
         return int(player_guess)
