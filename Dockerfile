@@ -3,14 +3,13 @@ FROM python:3.10
 # Set the work directory for the application
 WORKDIR /app
 
-# Add Utils to Docker
+# Add python script to Docker
 COPY /Utilities/Utils.py ./Utilities/Utils.py
 
 # Add Scores file to Docker
-COPY Scores.txt .
-
-# Add Flask app to Docker
-COPY MainScores.py .
+COPY /Main/Scores.txt .
+# Add python script to Docker
+COPY /Main/MainScores.py .
 
 # Install dependencies
 RUN pip install --upgrade pip

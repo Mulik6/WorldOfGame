@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  web:
+    build: .
+    image: mulik6/world_of_game_mainscores:pipeline
+    ports:
+      - "8777:5000"
+    volumes:
+      - ./Main/Scores.txt:/app/Scores.txt
