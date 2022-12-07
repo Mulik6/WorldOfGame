@@ -14,7 +14,7 @@ pipeline {
                 sh 'python3 -m pip install -r requirements.txt'
                 //Creating dummy Scores file
                 //sh 'echo 666 > /Main/Scores.txt'
-                writeFile file: '/Main/Scores.txt', text: '666'
+                writeFile file: './Main/Scores.txt', text: '666'
             }
         }
         stage('Build') {
