@@ -32,7 +32,7 @@ pipeline {
         stage('Test') {
             steps {
                 //Running the playwright test - will fail if exit code is 1
-                sh "python e2e.py"
+                sh "python3 ./Utilities/e2e.py"
             }
         }
         stage('Finalize') {
