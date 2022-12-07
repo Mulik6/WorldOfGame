@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 //Building the docker image using the compose file
-                sh 'sudo docker-compose build'
+                sh 'docker-compose build'
             }
         }
         stage('Run') {
@@ -24,21 +24,21 @@ pipeline {
                 //Creating dummy Scores file
                 writeFile file: 'Scores.txt', text: '666'
                 //Running the docker image in a container
-                sh 'sudo docker compose up'
+                sh 'docker compose up'
             }
         }
         stage('Test') {
             steps {
                 //Running the playwright test - will fail if exit code is 1
-                sh "sudo python e2e.py"
+                sh "python e2e.py"
             }
         }
         stage('Finalize') {
             steps {
                 //Terminate the container
-                sh "sudo docker-compose down"
+                sh "docker-compose down"
                 //Pushing the image to dockerhub
-                sh "sudo docker-compose push"
+                sh "docker-compose push"
             }
         }
     }
