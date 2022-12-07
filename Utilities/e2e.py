@@ -25,10 +25,10 @@ def test_scores_service(application_url="http://127.0.0.1:5000"):
         context.close()
         browser.close()
         if 0 < the_score_as_dig < 1000:
-            print("True")
-            return True
+            print("Pass")
+            exit(0)
         else:
-            print("False")
-            return False
+            print("Fail")
+            exit(1)
 
 
