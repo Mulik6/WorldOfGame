@@ -1,10 +1,16 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
-        steps {
-            // Get the code from a GitHub repository
-            git url: 'https://github.com/Mulik6/WorldOfGame.git', branch: 'master'
+            steps {
+                // Get the code from a GitHub repository
+                git url: 'https://github.com/Mulik6/WorldOfGame.git', branch: 'master'
+            }
+        }
+        stage('install dependencies') {
+            steps {
+                sh 'python -m pip install -r requirements.txt'
             }
         }
         stage('Build') {
@@ -12,6 +18,7 @@ pipeline {
                 //Building the docker image using the compose file
                 sh 'docker compose -f docker-compose.yml'
             }
+        }
         stage('Run') {
             steps {
                 //Creating dummy Scores file
@@ -25,6 +32,7 @@ pipeline {
                 //Running the playwright test - will fail if exit code is 1
                 sh "python e2e.py"
             }
+        }
         stage('Finalize') {
             steps {
                 //Terminate the container
@@ -32,5 +40,6 @@ pipeline {
                 //Pushing the image to dockerhub
                 sh "docker-compose push"
             }
+        }
     }
 }
