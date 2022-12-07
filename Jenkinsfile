@@ -10,13 +10,13 @@ pipeline {
         }
         stage('install dependencies') {
             steps {
-                sh 'python3 -m pip install -r requirements.txt'
+                sh 'sudo python3 -m pip install -r requirements.txt'
             }
         }
         stage('Build') {
             steps {
                 //Building the docker image using the compose file
-                sh 'docker-compose build'
+                sh 'sudo docker-compose build'
             }
         }
         stage('Run') {
@@ -24,21 +24,21 @@ pipeline {
                 //Creating dummy Scores file
                 writeFile file: 'Scores.txt', text: '666'
                 //Running the docker image in a container
-                sh 'docker compose up'
+                sh 'sudo docker compose up'
             }
         }
         stage('Test') {
             steps {
                 //Running the playwright test - will fail if exit code is 1
-                sh "python e2e.py"
+                sh "sudo python e2e.py"
             }
         }
         stage('Finalize') {
             steps {
                 //Terminate the container
-                sh "docker-compose down"
+                sh "sudo docker-compose down"
                 //Pushing the image to dockerhub
-                sh "docker-compose push"
+                sh "sudo docker-compose push"
             }
         }
     }
