@@ -10,7 +10,10 @@ pipeline {
         }
         stage('install dependencies') {
             steps {
+                // Installing dependencies
                 sh 'python3 -m pip install -r requirements.txt'
+                //Creating dummy Scores file
+                sh 'echo 666 > /Main/Scores.txt'
             }
         }
         stage('Build') {
@@ -21,9 +24,6 @@ pipeline {
         }
         stage('Run') {
             steps {
-                //Creating dummy Scores file
-                // writeFile file: '/Main/Scores.txt', text: '666'
-                sh 'echo 666 > /Main/Scores.txt'
                 //Running the docker image in a container
                 sh 'docker compose up'
             }
