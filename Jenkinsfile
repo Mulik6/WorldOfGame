@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 //Building the docker image using the compose file
-                sh 'docker compose -f docker-compose.yml'
+                sh 'docker-compose build'
             }
         }
         stage('Run') {
