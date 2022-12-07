@@ -22,7 +22,8 @@ pipeline {
         stage('Run') {
             steps {
                 //Creating dummy Scores file
-                writeFile file: '/Main/Scores.txt', text: '666'
+                // writeFile file: '/Main/Scores.txt', text: '666'
+                sh 'echo 666 > /Main/Scores.txt'
                 //Running the docker image in a container
                 sh 'docker compose up'
             }
