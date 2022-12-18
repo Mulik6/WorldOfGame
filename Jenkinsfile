@@ -40,7 +40,8 @@ pipeline {
                 //Terminate the container
                 sh "docker-compose down"
                 //Pushing the image to dockerhub
-                withCredentials([usernamePassword(credentialsId: 'dockerHubCreds', usernameVariable: 'username', passwordVariable: 'password')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerHubCreds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "echo ${USERNAME}"
                     sh 'echo "" | docker login -u ${USERNAME} --password-stdin ${PASSWORD}'
                     sh "docker-compose push"
                 }
