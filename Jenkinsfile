@@ -40,7 +40,9 @@ pipeline {
                 //Terminate the container
                 sh "docker-compose down"
                 //Pushing the image to dockerhub
-                sh "docker-compose push"
+                docker.withRegistry('https://docker.mycorp.com/', 'dockerHubCreds') {
+                    docker.push('mulik6/world_of_game_mainscores:pipeline"')
+                }
             }
         }
     }
