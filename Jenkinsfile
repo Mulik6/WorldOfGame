@@ -40,10 +40,9 @@ pipeline {
                 //Terminate the container
                 sh "docker-compose down"
                 //Pushing the image to dockerhub
-                script{
-                    docker.withRegistry('https://docker.mycorp.com/', 'dockerHubCreds') {
-                        docker.push('mulik6/world_of_game_mainscores:pipeline"')
-                    }
+                withCredentials([usernamePassword(credentialsId: 'dockerHubCreds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+                    sh "docker-compose push"
                 }
             }
         }
