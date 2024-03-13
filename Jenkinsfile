@@ -11,7 +11,7 @@ pipeline {
         stage('install dependencies') {
             steps {
                 // Installing Python 3 and pip
-                sh 'sudo apt-get update && sudo apt-get install -y python3 python3-pip'
+                sh 'apt-get update && apt-get install -y python3 python3-pip'
                 // Installing dependencies
                 sh 'python3 -m pip install -r requirements.txt'
                 //Creating dummy Scores file
