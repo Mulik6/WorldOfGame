@@ -10,10 +10,10 @@ pipeline {
         }
         stage('install dependencies') {
             steps {
-                // Installing Python 3 and pip
-                // sh 'apt-get update && apt-get install -y python3 python3-pip'
-                // Installing dependencies
-                sh 'python3 -m pip install -r requirements.txt'
+                 // Create a virtual environment
+                sh 'python3 -m venv venv'
+                // Activate the virtual environment and install dependencies
+                sh '. venv/bin/activate && pip install -r requirements.txt'
                 //Creating dummy Scores file
                 writeFile file: './Main/Scores.txt', text: '666'
             }
