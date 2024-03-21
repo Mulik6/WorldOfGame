@@ -6,4 +6,4 @@ services:
     ports:
       - "8777:5000"
     volumes:
-      - ./Main/Scores.txt:/app/Scores.txt
+      - ./jenkins_workdir/Main/Scores.txt:/app/Scores.txt
