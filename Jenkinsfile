@@ -14,6 +14,9 @@ pipeline {
                 sh 'python3 -m venv venv'
                 // Activate the virtual environment and install dependencies
                 sh '. venv/bin/activate && pip install -r requirements.txt'
+                // Install pytest-playwright plugin and playwright
+                sh '. venv/bin/activate && pip install pytest-playwright'
+                sh '. venv/bin/activate && playwright install'
                 //Creating dummy Scores file
                 writeFile file: './Main/Scores.txt', text: '666'
             }
