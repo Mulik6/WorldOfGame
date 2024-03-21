@@ -35,8 +35,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                //Running the playwright test - will fail if exit code is 1
-                sh "python3 ./Utilities/e2e.py"
+                //Running the playwright test in the virtual environment - will fail if exit code is 1
+                sh ". venv/bin/activate && python3 ./Utilities/e2e.py"
             }
         }
         stage('Finalize') {
