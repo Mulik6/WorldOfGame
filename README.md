@@ -1,7 +1,5 @@
 # WorldOfGame - CI\CD project
-
-## DevOps-Experts Course Project 2022
-## Created as Part of my DevOps course for practice purposes.
+### Refined and expanded my expertise in DevOps through ongoing practice and hands-on exercises, starting from my DevOps course and continuing beyond.
 
 In this project, I've delved into the creation of CI/CD pipelines, leveraging Python for scripting and Microsoft Playwright for testing. 
 Additionally, I've explored Docker containers and images, along with Docker Hub, and ventured into different cloud service providers and OS architectures, which I'll discuss in detail later on.
@@ -83,8 +81,8 @@ And they are including all relevant and required dependancies and prerequisites.
 
 --------
 
-# Jenkins Agent Linux Prerequisites
-## For Linux/arm64
+## Jenkins Agent Linux Prerequisites
+### For Linux/arm64
 
 ```bash
 apt update -y
@@ -109,7 +107,7 @@ apt install -y docker-ce
 curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
-## For Linux/AMD64
+### For Linux/AMD64
 ```bash
 apt update -y
 apt upgrade -y
