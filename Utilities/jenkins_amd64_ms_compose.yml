@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  jenkins_master:
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins_master
+    image: jenkins/jenkins:lts-jdk17
+  jenkins_slave:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: jenkins_slave
+    image: mulik6/myjenkinslave:latest
+networks: {}
