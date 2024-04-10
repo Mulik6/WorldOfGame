@@ -58,10 +58,9 @@ To enhance future deployments and alleviate setup complexities, I took proactive
 Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. 
 You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
 
+--------
 
-## For convenience, I am sharing the prequists for installation over Linux:
 ## Jenkins Agent Linux Prerequisites
-
 ### For Linux/arm64
 
 ```bash
