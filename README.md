@@ -52,7 +52,7 @@ Seeking enhanced flexibility and efficiency, I migrated to Google Cloud Platform
 
 In a quest for experimentation and diversification, I turned to Oracle Cloud Infrastructure (OCI). Here, I encountered a unique challenge: the compute instance was based on a distinct OS architecture (Linux/ARM64). Consequently, I had to devise a tailored solution by provisioning a new Docker container specifically configured for my Jenkins Agent.
 
-## Another challenge I encounter and how I solved it - yes I "DinD"
+# Another challenge I encounter and how I solved it - yes I "DinD"
 
 ### TL;DR 
 I "DinD" it - DinD stnads for Docker-in-Docker....
@@ -71,21 +71,21 @@ Except that instead of starting “child” containers, it will start “sibling
 If youre lazy like myself, just keep on reading... Do not worry! I got your back... :)
 In the next section ("To make things even simplier") I have provided you with prebuilt compose file that mount that container for you!
 
-## Simplifying Future Deployments
+# Simplifying Future Deployments
 
 To enhance future deployments and alleviate setup complexities, I took proactive measures. 
 Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. 
 You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
 
-## To make things even simplier
+# To make things even simplier
 I have uploaded two Docker Compose files within the [Utilities](https://github.com/Mulik6/WorldOfGame/tree/master/Utilities) directory. 
 Their titles are indicative of their purpose: one tailored for ARM64 and the other for AMD64 Agent containers. 
 And they are including all relevant and required dependancies and prerequisites.
 
 --------
 
-## Jenkins Agent Linux Prerequisites
-### For Linux/arm64
+# Jenkins Agent Linux Prerequisites
+## For Linux/arm64
 
 ```bash
 apt update -y
@@ -110,7 +110,7 @@ apt install -y docker-ce
 curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
-### For Linux/AMD64
+## For Linux/AMD64
 ```bash
 apt update -y
 apt upgrade -y
