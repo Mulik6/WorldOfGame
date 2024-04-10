@@ -52,11 +52,35 @@ Seeking enhanced flexibility and efficiency, I migrated to Google Cloud Platform
 
 In a quest for experimentation and diversification, I turned to Oracle Cloud Infrastructure (OCI). Here, I encountered a unique challenge: the compute instance was based on a distinct OS architecture (Linux/ARM64). Consequently, I had to devise a tailored solution by provisioning a new Docker container specifically configured for my Jenkins Agent.
 
+## Another challenge I encounter and how I solved it - yes I "DinD"
+
+### TL;DR 
+I "DinD" it - DinD stnads for Docker-in-Docker....
+For further reading you can follow the blogpost written by [Jérôme Petazzoni](https://github.com/jpetazzo) at [this link](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
+
+### How I DinD it
+So, my pipeline, when running within a containarized Jenkins Agent, will have to create and run additional container (as mentioned above in stage 4 of my pipeline).
+To allow it to perform this task youll have to follow Jérôme's instructions:
+Simply put, when you start your CI container (Jenkins or other), instead of hacking something together with Docker-in-Docker, start it with:
+```bash
+docker run -v /var/run/docker.sock:/var/run/docker.sock ...
+```
+Now this container will have access to the Docker socket, and will therefore be able to start containers. 
+Except that instead of starting “child” containers, it will start “sibling” containers.
+
+If youre lazy like myself, just keep on reading... Do not worry! I got your back... :)
+In the next section ("To make things even simplier") I have provided you with prebuilt compose file that mount that container for you!
+
 ## Simplifying Future Deployments
 
 To enhance future deployments and alleviate setup complexities, I took proactive measures. 
 Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. 
 You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
+
+## To make things even simplier
+I have uploaded two Docker Compose files within the [Utilities](https://github.com/Mulik6/WorldOfGame/tree/master/Utilities) directory. 
+Their titles are indicative of their purpose: one tailored for ARM64 and the other for AMD64 Agent containers. 
+And they are including all relevant and required dependancies and prerequisites.
 
 --------
 
