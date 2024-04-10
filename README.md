@@ -46,16 +46,17 @@ Initially, I leveraged AWS EC2 as the cornerstone of my Jenkins infrastructure. 
 
 ## Transition to GCP: Dockerized Efficiency
 
-Seeking enhanced flexibility and efficiency, I migrated to Google Cloud Platform (GCP). Here, I adopted a setup comprising a single compute instance running Ubuntu Linux on AMD64 architecture. Within this environment, I deployed two Docker containers housing Jenkins, utilizing the official Jenkins image from Docker Hub ([jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)). This configuration streamlined resource allocation and facilitated smoother Jenkins operations.
+Seeking enhanced flexibility and efficiency, I migrated to Google Cloud Platform (GCP). Here, I adopted a setup comprising a single compute instance running Ubuntu Linux on AMD64 architecture. Within this environment, I deployed two Docker containers housing Jenkins, utilizing the official Jenkins image from Docker Hub ([jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)). 
 
 ## Exploring OCI: Architectural Diversification
 
-In a quest for experimentation and diversification, I turned to Oracle Cloud Infrastructure (OCI). Here, I encountered a unique challenge: the compute instance was based on a distinct OS architecture (Linux/ARM64). Consequently, I had to devise a tailored solution by provisioning a new Docker container specifically configured for the Jenkins Agent.
+In a quest for experimentation and diversification, I turned to Oracle Cloud Infrastructure (OCI). Here, I encountered a unique challenge: the compute instance was based on a distinct OS architecture (Linux/ARM64). Consequently, I had to devise a tailored solution by provisioning a new Docker container specifically configured for my Jenkins Agent.
 
 ## Simplifying Future Deployments
 
-To enhance future deployments and alleviate setup complexities, I took proactive measures. Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my optimized Jenkins node configurations.
+To enhance future deployments and alleviate setup complexities, I took proactive measures. 
+Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. 
+You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
 
-This journey underscores the importance of adaptability and innovation in optimizing CI/CD infrastructure across diverse cloud environments. Through strategic adjustments and proactive solutions, I've unlocked efficiency and scalability in Jenkins node management.
 
 
