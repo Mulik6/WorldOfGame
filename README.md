@@ -1,12 +1,12 @@
 # WorldOfGame - CI\CD project
 
-### DevOps-Experts Course Project 2022
-### Created as Part of my DevOps course for practice purposes.
+## DevOps-Experts Course Project 2022
+## Created as Part of my DevOps course for practice purposes.
 
 In this project, I've delved into the creation of CI/CD pipelines, leveraging Python for scripting and Microsoft Playwright for testing. 
 Additionally, I've explored Docker containers and images, along with Docker Hub, and ventured into different cloud service providers and OS architectures, which I'll discuss in detail later on.
 
-## TL;DR
+## What this pipeline is doing?
 
 The pipeline implemented in this project comprises the following stages:
 
@@ -42,7 +42,7 @@ In the quest for optimal Jenkins node management, I embarked on a journey throug
 
 ## AWS EC2: The Beginning
 
-Initially, I leveraged AWS EC2 as the cornerstone of my Jenkins infrastructure. A single EC2 instance served as the primary Jenkins node, handling both management tasks and job executions seamlessly.
+Initially, I leveraged AWS EC2 as the cornerstone of my Jenkins infrastructure. A single EC2 instance served as the primary Jenkins node, handling both management tasks and job executions.
 
 ## Transition to GCP: Dockerized Efficiency
 
@@ -54,8 +54,7 @@ In a quest for experimentation and diversification, I turned to Oracle Cloud Inf
 
 # Another challenge I encounter and how I solved it - yes I "DinD"
 
-### TL;DR 
-I "DinD" it - DinD stnads for Docker-in-Docker....
+## I "DinD" it - DinD stnads for Docker-in-Docker....
 For further reading you can follow the blogpost written by [Jérôme Petazzoni](https://github.com/jpetazzo) at [this link](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
 
 ### How I DinD it
