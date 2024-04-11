@@ -71,8 +71,11 @@ In the next section ("To make things even simplier") I have provided you with pr
 # Simplifying Future Deployments
 
 To enhance future deployments and alleviate setup complexities, I took proactive measures. 
-Both Jenkins Agent containers utilized in my deployments are now available on Docker Hub. 
-You can access them at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
+I have pushed a multi-architecture image to docker hub, I did it using the experimental feature of docker called docker "manifest".
+Basically, on each one of the platform I worked on (GCP and OCI) I have created and pushed the relevant architecture image, and than, using the manifest feature, I have combined them under same manifest and pushed them as a single repository and tag in my dockerhub (mulik6/myjenkinslave:latest).
+> "Docker manifests are particularly useful for multi-platform and multi-architecture applications, where the same application needs to run on different types of hardware or operating systems. The manifest ensures that Docker pulls the correct image for the platform it is running on, ensuring compatibility and consistency across different environments."
+
+You can pulled this image at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
 
 # To make things even simplier
 I have uploaded two Docker Compose files within the [Utilities](https://github.com/Mulik6/WorldOfGame/tree/master/Utilities) directory. 
