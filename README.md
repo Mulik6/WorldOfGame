@@ -78,9 +78,10 @@ Basically, on each one of the platform I worked on (GCP and OCI) I have created 
 You can pulled this image at [mulik6/myjenkinslave](https://hub.docker.com/r/mulik6/myjenkinslave/tags), ensuring seamless replication of my Jenkins Agent node configurations.
 
 # To make things even simplier
-I have uploaded two Docker Compose files within the [Utilities](https://github.com/Mulik6/WorldOfGame/tree/master/Utilities) directory. 
-Their titles are indicative of their purpose: one tailored for ARM64 and the other for AMD64 Agent containers. 
-And they are including all relevant and required dependancies and prerequisites.
+I have created and pushed a Docker Compose file within the [Utilities](https://github.com/Mulik6/WorldOfGame/tree/master/Utilities) directory (jenkins_ms_manifested_compose.yml).
+This Docker Compose file sets up a Jenkins environment with a master instance (jenkins_master) and a slave instance (jenkins_slave). 
+The master is exposed on ports 8080 and 50000, and the slave mounts the Docker socket to enable container management.
+Moreover, the 'jenkins_master' container will be pulled from the 'jenkins/jenkins:lts-jdk17' rpeository, and the 'jenkins_slave' will be pulled from my previously created rpeository 'mulik6/myjenkinslave:latest'.
 
 --------
 
