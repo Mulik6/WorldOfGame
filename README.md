@@ -58,11 +58,11 @@ For further reading you can follow the blogpost written by [Jérôme Petazzoni](
 ### How I DinD it
 So, my pipeline, when running within a containarized Jenkins Agent, will have to create and run additional container (as mentioned above in stage 4 of my pipeline).
 To allow it to perform this task youll have to follow Jérôme's instructions:
-Simply put, when you start your CI container (Jenkins or other), instead of hacking something together with Docker-in-Docker, start it with:
+> Simply put, when you start your CI container (Jenkins or other), instead of hacking something together with Docker-in-Docker, start it with:
 ```bash
 docker run -v /var/run/docker.sock:/var/run/docker.sock ...
 ```
-Now this container will have access to the Docker socket, and will therefore be able to start containers. 
+> Now this container will have access to the Docker socket, and will therefore be able to start containers. 
 Except that instead of starting “child” containers, it will start “sibling” containers.
 
 If youre lazy like myself, just keep on reading... Do not worry! I got your back... :)
