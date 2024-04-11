@@ -86,7 +86,6 @@ Moreover, the 'jenkins_master' container will be pulled from the 'jenkins/jenkin
 --------
 
 ## Jenkins Agent Linux Prerequisites
-### For Linux/arm64
 
 ```bash
 apt update -y
@@ -104,31 +103,15 @@ sudo sh ./get-docker.sh --dry-run
 # Install docker compose:
 apt update -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+### For Linux/arm64
+```bash
 add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu focal stable"
-apt install -y apt-transport-https ca-certificates curl software-properties-common
-apt install -y docker-ce
-
-curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
 ```
 ### For Linux/AMD64
 ```bash
-apt update -y
-apt upgrade -y
-
-# Install python, PIP and virtual env:
-apt install -y python3
-apt install -y python3-pip
-apt install -y python3-venv
-
-# Install docker:
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh ./get-docker.sh --dry-run
-
-# Install docker compose:
-apt update -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
 apt install -y apt-transport-https ca-certificates curl software-properties-common
 apt install -y docker-ce
 
